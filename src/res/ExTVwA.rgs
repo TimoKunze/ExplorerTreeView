@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'ExTVwA'
+		'ExTVwA.OCX'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

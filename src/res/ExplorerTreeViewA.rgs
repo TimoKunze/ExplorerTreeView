@@ -1,0 +1,42 @@
+HKCR
+{
+	ExTVwA.ExplorerTreeView.1 = s 'TimoSoft ExplorerTreeView Control 2.6 (ANSI)'
+	{
+		CLSID = s '{4EFAED18-9D4B-4ae9-9FA2-65B12979D743}'
+		'Insertable'
+	}
+	ExTVwA.ExplorerTreeView = s 'TimoSoft ExplorerTreeView Control 2.6 (ANSI)'
+	{
+		CLSID = s '{4EFAED18-9D4B-4ae9-9FA2-65B12979D743}'
+		CurVer = s 'ExTVwA.ExplorerTreeView.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4EFAED18-9D4B-4ae9-9FA2-65B12979D743} = s 'TimoSoft ExplorerTreeView Control 2.6 (ANSI)'
+		{
+			ProgID = s 'ExTVwA.ExplorerTreeView.1'
+			VersionIndependentProgID = s 'ExTVwA.ExplorerTreeView'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Implemented Categories'
+			{
+				'{40FC6ED4-2438-11CF-A3DB-080036F12502}'
+				'{0DE86A57-2BAA-11CF-A229-00AA003D7352}'
+				'{0DE86A53-2BAA-11CF-A229-00AA003D7352}'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 1'
+			'MiscStatus' = s '0'
+			{
+				'1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{0725EC44-6E15-4e66-A561-A94FDA7E5DCB}'
+			'Version' = s '2.6'
+		}
+	}
+}

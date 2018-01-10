@@ -1,0 +1,25 @@
+HKCR
+{
+	ExTVwA.CommonProperties.1 = s 'TimoSoft CommonProperties Class 2.6 (ANSI)'
+	{
+		CLSID = s '{DF881B41-CB53-446f-81FF-7B81B355A3D7}'
+	}
+	ExTVwA.CommonProperties = s 'TimoSoft CommonProperties Class (ANSI)'
+	{
+		CLSID = s '{DF881B41-CB53-446f-81FF-7B81B355A3D7}'
+		CurVer = s 'ExTVwA.CommonProperties.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DF881B41-CB53-446f-81FF-7B81B355A3D7} = s 'TimoSoft CommonProperties Class (ANSI)'
+		{
+			ProgID = s 'ExTVwA.CommonProperties.1'
+			VersionIndependentProgID = s 'ExTVwA.CommonProperties'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{0725EC44-6E15-4e66-A561-A94FDA7E5DCB}'
+		}
+	}
+}

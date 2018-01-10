@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Generated Files">
+      <UniqueIdentifier>{8d6e9bd2-20c9-462d-9505-8cbefe14e24a}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Generated Files">
+      <UniqueIdentifier>{6e148e0f-24dd-4e0b-876d-e4c6c4655fad}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files\ShBrowser">
+      <UniqueIdentifier>{c56a3aba-2034-410c-8f3e-decdf3268645}</UniqueIdentifier>
+      <Extensions>shbrowser\h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{79d54ffa-3701-4d36-b6cb-d06216c3d63d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CaretChangeTasks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCEnsureVisibleTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindowEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumOLEVERB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplorerTreeView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExTVw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TargetOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualTreeViewItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExTVwA_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExTVwU_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExTVwA.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ExTVwU.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\About.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerTreeViewA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerTreeViewU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExTVwA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExTVwU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Paypal.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar disabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar enabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\doc\Unused parts of API.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="res\CommonPropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualTreeViewItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CommonPropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerTreeViewA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerTreeViewU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemContainerA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemContainerU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeViewItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualTreeViewItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="ExTVwU.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="ExTVwA.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_IExplorerTreeViewEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IOLEDataObjectEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_ITreeViewItemContainerEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_ITreeViewItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_ITreeViewItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualTreeViewItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CaretChangeTasks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCEnsureVisibleTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompilerFlags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindowEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DispIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumOLEVERB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplorerTreeView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HyperLinkEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICaretChangeTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICategorizeProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICreditsProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IItemComparator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyNotifySinkImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TargetOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UndocComctl32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualTreeViewItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExTVwA.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExTVwU.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\definitions.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\IInternalMessageListener.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\IMessageListener.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\ExTVw.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

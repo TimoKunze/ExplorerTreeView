@@ -1,0 +1,25 @@
+HKCR
+{
+	ExTVwA.OLEDataObject.1 = s 'TimoSoft OLEDataObject Class 2.6 (ANSI)'
+	{
+		CLSID = s '{1E4292AC-9978-4242-8925-456AA360B164}'
+	}
+	ExTVwA.OLEDataObject = s 'TimoSoft OLEDataObject Class (ANSI)'
+	{
+		CLSID = s '{1E4292AC-9978-4242-8925-456AA360B164}'
+		CurVer = s 'ExTVwA.OLEDataObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {1E4292AC-9978-4242-8925-456AA360B164} = s 'TimoSoft OLEDataObject Class (ANSI)'
+		{
+			ProgID = s 'ExTVwA.OLEDataObject.1'
+			VersionIndependentProgID = s 'ExTVwA.OLEDataObject'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{0725EC44-6E15-4e66-A561-A94FDA7E5DCB}'
+		}
+	}
+}

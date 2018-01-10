@@ -1,0 +1,9 @@
+; ExTVwA.def: Declares the module parameters. (ANSI version)
+
+LIBRARY      "ExTVwA.ocx"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

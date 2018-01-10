@@ -1,0 +1,34 @@
+The following parts of the SysTreeView32 API (Windows 10) are not used:
+
+Control styles:
+---------------
+- TVS_EX_NOSINGLECOLLAPSE (0x00000001)
+	-> requires comctl32.dll 6.10 or newer
+	-> used by Windows Explorer in Windows Vista
+- TVS_EX_MULTISELECT (https://msdn.microsoft.com/en-us/library/bb759981.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> "Not supported. Do not use."
+
+Messages:
+---------
+- TVM_SETHOT (TV_FIRST + 58)
+
+Item States:
+------------
+- TVIS_EX_HWND (https://msdn.microsoft.com/en-us/library/bb773459.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> probably not implemented or not usable by applications
+
+Structures:
+-----------
+- TVITEMEX::hwnd (https://msdn.microsoft.com/en-us/library/bb773459.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> "Not used. Must be NULL."
+- TVITEMEX::iPadding (https://msdn.microsoft.com/en-us/library/bb773459.aspx)
+	-> requires Windows 7 or newer
+	-> corresponding TVIF_* constant is missing
+	-> no noticable effect, maybe not implemented
+	-> NOTE: code exists, but is deactivated
+
+Flags:
+------

@@ -1,0 +1,213 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "atlres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ICONS               BITMAP                  "res\\Icons.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ManageItems.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAINDLG DIALOGEX 0, 0, 249, 217
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "ExplorerTreeView 2.6 - Manage Items Sample"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_EXTVWU,"{3CDEC5BC-8CF1-46D0-A5E4-4079A5BD0C5C}",WS_TABSTOP,5,4,161,207
+    PUSHBUTTON      "&About...",ID_APP_ABOUT,183,4,50,14
+    LTEXT           "Right-click to add, remove or edit items.",IDC_STATIC,171,23,72,26,0,WS_EX_TRANSPARENT
+END
+
+IDD_EDITITEMDLG DIALOGEX 0, 0, 242, 86
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Item"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Text:",IDC_STATIC,3,7,18,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_TEXT,30,4,208,12,ES_AUTOHSCROLL
+    CONTROL         "Ghosted",IDC_GHOSTED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,21,60,9
+    CONTROL         "Bold",IDC_BOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,21,60,9
+    CONTROL         """+""/""-""-Button (Expando)",IDC_EXPANDO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,147,21,100,9
+    LTEXT           "IconIndex:",IDC_STATIC,3,39,36,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_ICONINDEX,41,35,41,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "ItemData:",IDC_STATIC,3,54,34,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_ITEMDATA,41,50,41,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "SelectedIconIndex:",IDC_STATIC,129,39,64,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_SELECTEDICONINDEX,197,35,41,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "HeightIncrement:",IDC_STATIC,136,52,57,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_HEIGHTINCREMENT,197,50,41,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,131,68,51,13
+    PUSHBUTTON      "Cancel",IDCANCEL,187,68,51,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Item management sample for TimoSoft ExplorerTreeView 2.6"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "ManageItems"
+            VALUE "OriginalFilename", "ManageItems.exe"
+            VALUE "ProductName", "TimoSoft ExplorerTreeView 2.6"
+            VALUE "ProductVersion", "2.6"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MAINDLG DLGINIT
+BEGIN
+    IDC_EXTVWU, 0x376, 357, 0
+0x0000, 0x0000, 0x0202, 0x0202, 0x0105, 0x0000, 0x0a00, 0x0000, 0x1903, 
+0x0000, 0x22ba, 0x0000, 0x000b, 0xffff, 0x000b, 0xffff, 0x000b, 0xffff, 
+0x0003, 0x0001, 0x0000, 0x0003, 0x0005, 0x8000, 0x000b, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x01f4, 0x0000, 0x0003, 0x07fd, 0x0004, 0x000b, 
+0x0000, 0x0003, 0xffff, 0xffff, 0x0003, 0xffff, 0xffff, 0x0003, 0x0005, 
+0x8000, 0x0003, 0x0008, 0x8000, 0x0003, 0xffff, 0xffff, 0x0003, 0xffff, 
+0xffff, 0x000b, 0xffff, 0x000b, 0x0000, 0x0009, 0x5203, 0x0be3, 0x8f91, 
+0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 0x0190, 0x4244, 
+0x0001, 0x5406, 0x6861, 0x6d6f, 0x0361, 0x0800, 0x0000, 0x0b80, 0x0000, 
+0x0300, 0x1000, 0x0000, 0x0380, 0x0000, 0x0000, 0x0300, 0xff00, 0xffff, 
+0x03ff, 0xff00, 0xffff, 0x03ff, 0x1000, 0x0000, 0x0300, 0x0000, 0x0000, 
+0x0300, 0x4600, 0x0000, 0x0300, 0x1100, 0x0000, 0x0300, 0x0300, 0x0000, 
+0x0300, 0x1000, 0x0000, 0x0380, 0x0100, 0x0000, 0x0300, 0x6400, 0x0000, 
+0x0900, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0300, 0x0000, 0x0000, 0x0b00, 0xff00, 0x0bff, 0x0000, 0x0300, 0x0000, 
+0x0000, 0x0300, 0x0200, 0x0000, 0x0b00, 0x0000, 0x0b00, 0xff00, 0x03ff, 
+0x0000, 0x0000, 0x0300, 0x0000, 0x0000, 0x0b00, 0xff00, 0x03ff, 0x0300, 
+0x0000, 0x0b00, 0xff00, 0x0bff, 0xff00, 0x03ff, 0x9600, 0x0000, 0x0300, 
+0x0f00, 0x0000, 0x0300, 0x0000, 0x0000, 0x0b00, 0x0000, 0x0b00, 0x0000, 
+0x0b00, 0xff00, 0x03ff, 0x0000, 0x0000, 0x0b00, 0xff00, "\377" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_ITEMACTIONSMENU MENU
+BEGIN
+    POPUP "Item Actions"
+    BEGIN
+        MENUITEM "Add sub-item...",             ID_ITEMACTION_ADDSUBITEM
+        MENUITEM "Add item above...",           ID_ITEMACTION_ADDITEMABOVE
+        MENUITEM "Add item below...",           ID_ITEMACTION_ADDITEMBELOW
+        MENUITEM SEPARATOR
+        MENUITEM "Edit...",                     ID_ITEMACTION_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "Remove item",                 ID_ITEMACTION_REMOVEITEM
+    END
+END
+
+IDR_TREEVIEWACTIONSMENU MENU
+BEGIN
+    POPUP "TreeView Actions"
+    BEGIN
+        MENUITEM "Add item...",                 ID_TREEACTION_ADDITEM
+        MENUITEM "Remove all items",            ID_TREEACTION_REMOVEALL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "ManageItems"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+

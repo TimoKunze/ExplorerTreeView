@@ -1,0 +1,25 @@
+HKCR
+{
+	ExTVwA.VirtualTreeViewItem.1 = s 'TimoSoft VirtualTreeViewItem Class 2.6 (ANSI)'
+	{
+		CLSID = s '{157C927E-A159-40c8-A379-82B3F237118C}'
+	}
+	ExTVwA.VirtualTreeViewItem = s 'TimoSoft VirtualTreeViewItem Class (ANSI)'
+	{
+		CLSID = s '{157C927E-A159-40c8-A379-82B3F237118C}'
+		CurVer = s 'ExTVwA.VirtualTreeViewItem.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {157C927E-A159-40c8-A379-82B3F237118C} = s 'TimoSoft VirtualTreeViewItem Class (ANSI)'
+		{
+			ProgID = s 'ExTVwA.VirtualTreeViewItem.1'
+			VersionIndependentProgID = s 'ExTVwA.VirtualTreeViewItem'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{0725EC44-6E15-4e66-A561-A94FDA7E5DCB}'
+		}
+	}
+}
