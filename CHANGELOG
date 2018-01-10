@@ -1,0 +1,280 @@
+Version 2.6.3 - DD/MM/YYYY
+
+- Project published on GitHub.
+
+
+
+Version 2.6.2 - 29/07/2016
+
+- Fixed some memory leaks that occurred when firing certain events.
+
+
+
+Version 2.6.1 - 27/01/2016
+
+- FIX: The control could crash during OLE drag'n'drop.
+- FIX: The control could crash the other process during OLE drag'n'drop, especially when IOLEDataObject::SetDropDescription() had been called.
+
+
+
+Version 2.6.0 - 22/01/2016
+
+- Added the IExplorerTreeView::FinishOLEDragDrop method. It should not be used if not really needed. It can be used to hide the drag image if execution of the OLEDragDrop event takes a long time or if a message is displayed from within this event.
+
+
+
+Version 2.5.2 - 24/10/2015
+
+- Extended the ShellBrowser interface to support ITreeViewItem::ExpandedIconIndex.
+- Initial support for Windows 10.
+
+
+
+Version 2.5.1 - 21/02/2015
+
+- Fixed a bug in the ShellBrowser interface code.
+
+
+
+Version 2.5.0 - 01/01/2014
+
+- Added the *MouseWheel events for handling mouse wheel rotations.
+- Added the EditXClick, EditXDblClick, XClick, and XDblClick events for support of the extended mouse buttons.
+- Extended the EditMouse*, ItemMouse*, and Mouse* events to support the extended mouse buttons.
+- FIX: The Font and MouseIcon properties could leak GDI resources.
+
+
+
+Version 2.4.0 - 03/11/2013
+
+- Added the ITreeViewItems::FindByPath method.
+- Extended the IExplorerTreeView::DisabledEvents property by the deItemGetDisplayInfo flag. It can be used to improve performance if the control is used in combination with the ShellTreeView control.
+
+
+
+Version 2.3.0 - 11/11/2012
+
+- Added the IExplorerTreeView::RichToolTips property.
+- FIX: The ResizedControlWindow event was not fired when it should have been fired.
+- Initial support for Windows 8.
+
+
+
+Version 2.2.2 - 04/08/2012
+
+- Extended the HasExpandoConstants enumeration by 'heAuto'.
+- Calling ITreeViewItems::Add could result in runtime error 380 (invalid parameter) although all parameters have been valid.
+- Reimplemented the subclassing code of the VB6 samples to make it more robust.
+
+
+
+Version 2.2.1 - 15/01/2012
+
+- Fixed a crash that could occur during drag'n'drop.
+- Fixed a memory leak that occurred during drag'n'drop if Aero drag-images have been used.
+
+
+
+Version 2.2.0 - 01/11/2011
+
+- Added the IExplorerTreeView::Locale property.
+- Added the IExplorerTreeView::TextParsingFlags property.
+- Extended the SortByConstants enumeration by 'sobNumericIntText', 'sobNumericFloatText', 'sobCurrencyText' and 'sobDateTimeText'.
+- Changed the default values for the iconIndex, selectedIconIndex and expandedIconIndex parameters of the ItemGetDisplayInfo event from 0 to -2 (no icon).
+
+
+
+Version 2.1.1 - 21/05/2011
+
+- FIX: Disabling the control did not move the keyboard focus to the next control in the tab order.
+- FIX: The ResizedControlWindow event was fired when actually nothing had changed.
+
+
+
+Version 2.1.0 - 24/01/2011
+
+- FIX: The control could crash when it was destroyed.
+- FIX: Due do a bug in Microsoft ATL, the control could lose keyboard focus when it shouldn't. This problem occured in MDI applications only. Many thanks to Peter Schellenbach for his help.
+- Switched to Visual C++ 2010 and dropped support for Windows 2000.
+
+
+
+Version 2.0.0 - 10/07/2010
+
+- Improved info tip support for ANSI build.
+- FIX: IOLEDataObject::SetDropDescription could cause crashes in other programs.
+- Fixed minor bugs in the ShellBrowserControls interface.
+
+
+
+Version 2.0.0 (RC2) - 03/01/2010
+
+- Initial support for Windows 7.
+- Added the IExplorerTreeView::OLEDragImageStyle property.
+- Added the _IExplorerTreeViewEvents::ChangedSortOrder event.
+- Added the _IExplorerTreeViewEvents::ChangingSortOrder event.
+- Replaced ITreeViewItem::Height, ITreeViewItem::Left, ITreeViewItem::Top, ITreeViewItem::Width, ITreeViewItem::RowHeight, ITreeViewItem::RowLeft, ITreeViewItem::RowTop, ITreeViewItem::RowWidth and ITreeViewItem::GetExpandoRectangle() with ITreeViewItem::GetRectangle().
+- Extended the DropDescriptionIconConstants enumeration by 'ddiUseDefault'.
+- Changed the definitions of the RequestedInfoConstants enumeration to fix naming collisions with ComboListBoxControls.
+- Changed the type of item texts from VARIANT to BSTR (BSTR is String in Visual Basic 6) to improve performance. When you previously specified 'Empty' to make the ItemGetDisplayInfo event raise, you now need vbNullString (NULL for C++).
+- FIX: An access violation could occur when ending label-editing.
+- FIX: The TAB key didn't move the focus to the next control if the control was placed inside a VB6 UserControl.
+- FIX: If the control was placed on a Form for which the KeyPreview feature was activated, the Form_Key* handler didn't receive key strokes like Alt+PgDown or Alt+Left, if the control had the keyboard focus.
+- FIX: The 'shift' parameter that many events have, often missed the ALT key.
+- FIX: Drop descriptions didn't work as expected if the drag source was a 64 bit app.
+- Massively reduced the usage of GDI handles.
+- Made some internal changes that will make it easier for me to keep binary compatibility in future.
+- It is no longer necessary to subclass the control's parent window and reflect the WM_CONTEXTMENU message to make the ContextMenu event work.
+- Deploy (stripped) symbols with the binaries to make debugging easier. This are the pdb files in case you wonder.
+
+
+
+Version 2.0.0 (RC1) - 04/11/2008
+
+- Added the IExplorerTreeView::AutoHScroll property.
+- Added the IExplorerTreeView::AutoHScrollPixelsPerSecond property.
+- Added the IExplorerTreeView::AutoHScrollRedrawInterval property.
+- Added the IExplorerTreeView::BuiltInStateImages property.
+- Added the IExplorerTreeView::DrawImagesAsynchronously property.
+- Added the IExplorerTreeView::FadeExpandos property.
+- Added the IExplorerTreeView::IndentStateImages property.
+- Added the ITreeViewItem::ExpandedIconIndex and IVirtualTreeViewItem::ExpandedIconIndex properties.
+- Added the ITreeViewItem::Grayed and IVirtualTreeViewItem::Grayed properties.
+- Added the ITreeViewItem::ShellTreeViewItemObject property as part of the ShellBrowser interface.
+- Added the ITreeViewItem::Virtual and IVirtualTreeViewItem::Virtual properties.
+- Added the ITreeViewItem::DisplayInfoTip() method.
+- Added the ITreeViewItem::GetExpandoRectangle() method.
+- Added the IOLEDataObject::GetDropDescription() method.
+- Added the IOLEDataObject::SetDropDescription() method.
+- Added the _IExplorerTreeViewEvents::ItemAsynchronousDrawFailed event.
+- Added the _IExplorerTreeViewEvents::ItemSelectionChanging event.
+- Added the _IExplorerTreeViewEvents::OLEDragEnterPotentialTarget event.
+- Added the _IExplorerTreeViewEvents::OLEDragLeavePotentialTarget event.
+- Added the _IExplorerTreeViewEvents::OLEReceivedNewData event.
+- Removed the IExplorerTreeView::hStateImageList property. Use the IExplorerTreeView::hImageList property instead.
+- Removed BkImage support. It caused too many problems and according to the vote, noone uses it anyway.
+- Removed MultiSelect support. It caused way too many problems, especially on Windows Vista. NOTE: Now the _IExplorerTreeViewEvents::ItemSelectionChanged event requires comctl32.dll version 6.10 or newer.
+- Rewrote the FavoritesStyle feature (ported from ExplorerTreeView 1.12.0). It's working perfectly now.
+- Extended IExplorerTreeView::SortItems() by the parameter 'fifthCriterion'.
+- Extended ITreeViewItem::SortSubItems() by the parameter 'fifthCriterion'.
+- Extended ITreeViewItems::Add() by the parameters 'expandedIconIndex' and 'isVirtual'.
+- Extended the _IExplorerTreeViewEvents::ContextMenu event by the parameter 'showDefaultMenu'.
+- Extended the _IExplorerTreeViewEvents::ItemGetDisplayInfo event by the parameter 'expandedIconIndex'.
+- Changed the _IExplorerTreeViewEvents::OLEDragDrop event to allow changing the drop target. While this is not useful for a plain treeview, it gives you more control over drag'n'drop if a ShellTreeView control is attached and ExplorerTreeView is used for shell-browsing.
+- Extended ITreeViewItems filtering support, so that it can filter by the ITreeViewItem::ExpandedIconIndex property.
+- Extended ITreeViewItems filtering support, so that it can filter by the ITreeViewItem::Grayed property.
+- Extended ITreeViewItems filtering support, so that it can filter by the ITreeViewItem::Virtual property.
+- Extended the DisabledEventsConstants enumeration by 'deItemSelectionChangingEvents'.
+- Extended the SortByConstants enumeration by 'sobShell'.
+- Extended the StateImageChangeCausedByConstants enumeration by 'siccbCode'. NOTE: On Windows Vista, the _IExplorerTreeViewEvents::ItemStateImageChang[ing|ed] events are not only raised if the state image is changed using the mouse or keyboard, but also if it is changed through code!
+- Renamed the ITreeViewItem::HasPlusMinusButton property to 'HasExpando'.
+- Renamed the IVirtualTreeViewItem::HasPlusMinusButton property to 'HasExpando'.
+- Renamed the HasPlusMinusButtonConstants enumeration to 'HasExpandoConstants'. The members of this enumeration have been renamed, too.
+- Renamed the 'fpHasPlusMinusButton' member of the FilteredPropertyConstants enumeration to 'fpHasExpando'.
+- Renamed the 'htItemButton' member of the HitTestConstants enumeration to 'htItemExpando'.
+- Renamed the 'ibbdItemButton' member of the ItemBoundingBoxDefinitionConstants enumeration to 'ibbdItemExpando'.
+- Renamed the 'riHasPlusMinusButton' member of the RequestedInfoConstants enumeration to 'riHasExpando'.
+- Renamed the 'tvsButtons' member of the TreeViewStyleConstants enumeration to 'tvsExpandos'.
+- Renamed the 'hasPlusMinusButton' argument of the ITreeViewItems::Add() method to 'hasExpando'.
+- Renamed the 'hasButton' parameter of the _IExplorerTreeViewEvents::ItemGetDisplayInfo event to 'hasExpando'.
+- Removed an ugly hack, because it caused several problems. Unfortunately this means, that the ContextMenu event won't work out of the box anymore and that Unicode support is limited. To make both things work 100%, you must implement subclassing. See the FAQ for details.
+- Rewrote large parts of the drag'n'drop code resulting in e. g. much better drag images.
+- FIX: Keyboard input wasn't processed if the control was placed within a VB6 UserControl.
+- FIX: The control crashed if it was destroyed from within an event handler.
+- FIX: Moving the control without resizing it could lead to a control width or height of 0.
+- FIX: Rewrote IExplorerTreeView::LoadSettingsFromFile() and IExplorerTreeView::SaveSettingsToFile() and updated the file format, because the old format may crash IExplorerTreeView::LoadSettingsFromFile().
+- FIX: Changing the font could crash the control.
+- FIX: The control could crash if a TreeViewItemContainer object ran out of scope.
+- FIX: ITreeViewItems::Contains() didn't return the correct value in some situations.
+- FIX: ITreeViewItemContainer::Clone() didn't work as expected.
+- FIX: ITreeViewItemContainer::RemoveAll() didn't work as expected.
+- FIX: It was possible to create two TreeViewItemContainer objects with the same internal ID. This caused various problems.
+- FIX: Changing state images using the mouse couldn't be canceled under all circumstances.
+- FIX: Changes were not applied implicitly when jumping between multiple instances of the control with the property pages opened.
+- Clicking the caret item of an inactive ExplorerTreeView control no longer starts label-editing mode for this item.
+- Fixed some GDI handle leaks.
+- Fixed some drawing glitches.
+- Improved custom draw support.
+- Improved IExplorerTreeView::Font and IExplorerTreeView::MouseIcon.
+- Slightly changed the implementation of the HotTracking style 'htrWinXPStyle'. Now a MousePointer setting of 'mpDefault' is equivalent to 'mpArrow'.
+- Improved IExplorerTreeView::SingleExpand/seWinXPStyle.
+- Removed the data-binding stuff (it was probably broken anyway).
+- Improved the documentation. Now properties are displayed as such.
+- Switched to Visual C++ 2008 and dropped support for Windows 9x, Me and NT 4.0.
+- Implemented the ShellBrowser interface.
+- Decreased the binaries' size.
+- Ported the WTL7 samples to Visual C++ 2008/WTL8.
+- Removed the Outlook 2003 samples, because they had too many bugs I couldn't solve.
+- Added Multi Column samples.
+- Linked the new bug tracking system.
+- Improved setup.
+
+
+
+Version 2.0.0 (Beta 4) - 02/11/2005
+
+- FIX: The control crashed when it tried to recreate its window.
+- FIX: The behavior of the IExplorerTreeView::Enabled property was different from other controls.
+- FIX: Auto-scrolling tried to scroll the control after the maximum scroll position was reached.
+- FIX: Drag images for non-OLE-drag'n'drop didn't play well with auto-scrolling.
+- FIX: Under certain circumstances, drag images contained the icons only.
+- FIX: Drag images with 32bpp icons looked ugly.
+- FIX: Drag images didn't contain overlay images.
+- FIX: Drag image creation for multiple items could fail.
+- Made IExplorerTreeView::OLEDrag() more robust.
+- Added some C++/WTL samples.
+- Improved Drag'n'Drop support.
+- Improved documentation.
+
+
+
+Version 2.0.0 (Beta 3) - 29/09/2005
+
+- Converted the control into a single-window solution. This is easier to handle and needs less resources.
+- Removed the _IExplorerTreeViewEvents::TreeViewGotFocus event.
+- Removed the _IExplorerTreeViewEvents::TreeViewLostFocus event.
+- Renamed the _IExplorerTreeViewEvents::CreatedEditControl event to _IExplorerTreeViewEvents::CreatedEditControlWindow.
+- Renamed the _IExplorerTreeViewEvents::DestroyedEditControl event to _IExplorerTreeViewEvents::DestroyedEditControlWindow.
+- Renamed the _IExplorerTreeViewEvents::DestroyedTreeViewControl event to _IExplorerTreeViewEvents::DestroyedControlWindow.
+- Renamed the _IExplorerTreeViewEvents::RecreatedTreeViewControl event to _IExplorerTreeViewEvents::RecreatedControlWindow.
+- Added the IExplorerTreeView::UseSystemFont property.
+- Added the _IExplorerTreeViewEvents::ResizedControlWindow event.
+- Added IExplorerTreeView::SaveSettingsToFile() and IExplorerTreeView::LoadSettingsFromFile(). These methods can be used to save/load a control's properties to/from a file.
+- Shift-key multiselection is no longer preferred over Ctrl-key multiselection. Instead the control follows Visual Studio's project explorer and does it the other way around now.
+- FIX: Setting the modifierKeys parameter of the IExplorerTreeView::CaretItem property to vbCtrlMask had the same effect as setting it to vbShiftMask.
+- FIX: OLE drag images weren't working if the "Show window contents while dragging" feature was disabled.
+- FIX: The Font property leaked GDI objects.
+- Revised the Font property.
+- Some minor bugfixes.
+- Improved Unicode support.
+- Simplified some internal parts of the control.
+- Improved documentation.
+- Improved code quality.
+
+
+
+Version 2.0.0 (Beta 2) - 30/07/2005
+
+- Rewrote the TreeViewItems collection class. It offers rich filter capabilities now.
+- Removed the RequiredSelectionStateConstants enumeration.
+- Rewrote parts of the drag'n'drop code. Drag images are supported much better now.
+- FIX: The control leaked memory during OLE drag'n'drop.
+- FIX: ITreeViewItemContainer::CreateDragImage() didn't work well with rtlLayout being set.
+- FIX: In some cases the control didn't behave like a common treeview although IExplorerTreeView::MultiSelect was set to msNone.
+- FIX: The label-edit control didn't handle rtlText correctly.
+- FIX: If the EditContextMenu event was invoked using the keyboard, the proposed menu position was wrong.
+- FIX: Sometimes the ItemMouseLeave event wasn't fired.
+- FIX: OLE verbs didn't work.
+- Many minor bugfixes.
+- Made IExplorerTreeView::CaretItem the default property of IExplorerTreeView.
+- The IExplorerTreeView::ProcessContextMenuKeys property affects the EditContextMenu event now, too.
+- The native treeview control's host window has a pretty class name now.
+- Improved item sorting performance.
+- Improved the OptionTreeView sample.
+- Improved documentation.
+
+
+
+Version 2.0.0 (Beta 1) - 14/03/2005
+
+- First public release.
