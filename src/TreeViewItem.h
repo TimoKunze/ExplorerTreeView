@@ -26,7 +26,7 @@
 #else
 	#include "ExTVwA.h"
 #endif
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "_ITreeViewItemEvents_CP.h"
 #include "helpers.h"
 #include "ExplorerTreeView.h"

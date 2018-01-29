@@ -1160,10 +1160,10 @@ HIMAGELIST ExplorerTreeView::CreateLegacyDragImage(HTREEITEM hItem, LPPOINT pUpp
 	}
 
 	// calculate the bounding rectangles of the various item parts
-	WTL::CRect itemBoundingRect;
-	WTL::CRect selectionBoundingRect;
-	WTL::CRect labelBoundingRect;
-	WTL::CRect iconBoundingRect;
+	CRect itemBoundingRect;
+	CRect selectionBoundingRect;
+	CRect labelBoundingRect;
+	CRect iconBoundingRect;
 
 	*reinterpret_cast<HTREEITEM*>(&labelBoundingRect) = hItem;
 	SendMessage(TVM_GETITEMRECT, TRUE, reinterpret_cast<LPARAM>(&labelBoundingRect));
@@ -1506,7 +1506,7 @@ BOOL ExplorerTreeView::CreateLegacyOLEDragImage(ITreeViewItemContainer* pItems, 
 			pDragImage->crColorKey = RGB(0xF4, 0x00, 0x00);
 			CBrush backroundBrush;
 			backroundBrush.CreateSolidBrush(pDragImage->crColorKey);
-			memoryDC.FillRect(WTL::CRect(0, 0, bitmapWidth, bitmapHeight), backroundBrush);
+			memoryDC.FillRect(CRect(0, 0, bitmapWidth, bitmapHeight), backroundBrush);
 			ImageList_Draw(hImageList, 0, memoryDC, 0, 0, ILD_NORMAL);
 
 			// clean up
@@ -7016,7 +7016,7 @@ LRESULT ExplorerTreeView::OnWindowPosChanged(UINT /*message*/, WPARAM /*wParam*/
 {
 	LPWINDOWPOS pDetails = reinterpret_cast<LPWINDOWPOS>(lParam);
 
-	WTL::CRect windowRectangle = m_rcPos;
+	CRect windowRectangle = m_rcPos;
 	/* Ugly hack: We depend on this message being sent without SWP_NOMOVE at least once, but this requirement
 	              not always will be fulfilled. Fortunately pDetails seems to contain correct x and y values
 	              even if SWP_NOMOVE is set.
@@ -10072,10 +10072,10 @@ inline HRESULT ExplorerTreeView::Raise_ContextMenu(SHORT button, SHORT shift, OL
 				// retrieve the caret item and propose its rectangle's middle as the menu's position
 				HTREEITEM hItem = reinterpret_cast<HTREEITEM>(SendMessage(TVM_GETNEXTITEM, TVGN_CARET, 0));
 				if(hItem) {
-					WTL::CRect itemRectangle;
+					CRect itemRectangle;
 					*reinterpret_cast<HTREEITEM*>(&itemRectangle) = hItem;
 					if(SendMessage(TVM_GETITEMRECT, TRUE, reinterpret_cast<LPARAM>(&itemRectangle))) {
-						WTL::CPoint centerPoint = itemRectangle.CenterPoint();
+						CPoint centerPoint = itemRectangle.CenterPoint();
 						x = centerPoint.x;
 						y = centerPoint.y;
 					}
@@ -10287,8 +10287,8 @@ inline HRESULT ExplorerTreeView::Raise_DragMouseMove(SHORT button, SHORT shift, 
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePosition(x, y);
-		WTL::CRect noScrollZone(0, 0, 0, 0);
+		CPoint mousePosition(x, y);
+		CRect noScrollZone(0, 0, 0, 0);
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = noScrollZone.PtInRect(mousePosition);
 		if(isInScrollZone) {
@@ -10431,9 +10431,9 @@ inline HRESULT ExplorerTreeView::Raise_EditContextMenu(SHORT button, SHORT shift
 		// the event was caused by the keyboard
 		if(properties.processContextMenuKeys) {
 			// propose the middle of the edit control's client rectangle as the menu's position
-			WTL::CRect clientArea;
+			CRect clientArea;
 			containedEdit.GetClientRect(&clientArea);
-			WTL::CPoint centerPoint = clientArea.CenterPoint();
+			CPoint centerPoint = clientArea.CenterPoint();
 			x = centerPoint.x;
 			y = centerPoint.y;
 		} else {
@@ -11197,8 +11197,8 @@ inline HRESULT ExplorerTreeView::Raise_OLEDragEnter(IDataObject* pData, LPDWORD 
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone(0, 0, 0, 0);
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone(0, 0, 0, 0);
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = noScrollZone.PtInRect(mousePos);
 		if(isInScrollZone) {
@@ -11443,8 +11443,8 @@ inline HRESULT ExplorerTreeView::Raise_OLEDragMouseMove(LPDWORD pEffect, DWORD k
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone(0, 0, 0, 0);
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone(0, 0, 0, 0);
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = noScrollZone.PtInRect(mousePos);
 		if(isInScrollZone) {

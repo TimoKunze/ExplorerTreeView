@@ -504,7 +504,7 @@
     <ClCompile Include="CaretChangeTasks.cpp" />
     <ClCompile Include="CCEnsureVisibleTask.cpp" />
     <ClCompile Include="CommonProperties.cpp" />
-    <ClCompile Include="CWindowEx.cpp" />
+    <ClCompile Include="CWindowEx2.cpp" />
     <ClCompile Include="EnumOLEVERB.cpp" />
     <ClCompile Include="ExplorerTreeView.cpp" />
     <ClCompile Include="ExTVw.cpp" />
@@ -596,7 +596,7 @@
     <ClInclude Include="ClassFactory.h" />
     <ClInclude Include="CommonProperties.h" />
     <ClInclude Include="CompilerFlags.h" />
-    <ClInclude Include="CWindowEx.h" />
+    <ClInclude Include="CWindowEx2.h" />
     <ClInclude Include="DispIDs.h" />
     <ClInclude Include="EnumOLEVERB.h" />
     <ClInclude Include="ExplorerTreeView.h" />

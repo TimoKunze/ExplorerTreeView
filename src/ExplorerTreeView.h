@@ -31,7 +31,7 @@
 #else
 	#include "ExTVwA.h"
 #endif
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "_IExplorerTreeViewEvents_CP.h"
 #include "ICategorizeProperties.h"
 #include "ICreditsProvider.h"

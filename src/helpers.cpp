@@ -894,7 +894,7 @@ BOOL IsTreeViewItemTruncated(HWND hWndTvw, HTREEITEM hItem, LPTSTR pItemText/* =
 		int cxEdge = GetSystemMetrics(SM_CXEDGE);
 		itemRectangle.left -= cxEdge;
 		itemRectangle.top -= GetSystemMetrics(SM_CYBORDER);
-		WTL::CRect clientArea;
+		CRect clientArea;
 		GetClientRect(hWndTvw, clientArea);
 
 		BOOL freeBuffer = !pItemText;
@@ -908,7 +908,7 @@ BOOL IsTreeViewItemTruncated(HWND hWndTvw, HTREEITEM hItem, LPTSTR pItemText/* =
 		item.pszText = pItemText;
 		item.mask = TVIF_HANDLE | TVIF_TEXT;
 		if(SendMessage(hWndTvw, TVM_GETITEM, 0, reinterpret_cast<LPARAM>(&item))) {
-			WTL::CSize textSize;
+			CSize textSize;
 			CDC dc = GetDC(hWndTvw);
 			dc.GetTextExtent(pItemText, -1, &textSize);
 
@@ -1009,7 +1009,7 @@ HIMAGELIST SetupStateImageList(HIMAGELIST hStateImageList)
 
 					HBITMAP hPreviousBitmap = memoryDC.SelectBitmap(bitmap);
 
-					WTL::CRect rc(0, 0, iconSize.cx, iconSize.cy);
+					CRect rc(0, 0, iconSize.cx, iconSize.cy);
 					SIZE partSize;
 					themingEngine.GetThemePartSize(memoryDC, BP_CHECKBOX, CBS_MIXEDNORMAL, NULL, TS_TRUE, &partSize);
 					rc.OffsetRect((iconSize.cx - partSize.cx) / 2, (iconSize.cy - partSize.cy) / 2);

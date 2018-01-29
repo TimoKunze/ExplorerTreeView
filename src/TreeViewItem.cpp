@@ -220,7 +220,7 @@ HRESULT TreeViewItem::Move(HTREEITEM hNewParentItem, HTREEITEM hNewPreviousItem,
 	// we re-insert this item at the new location, do the same for its children and remove this item
 	TVINSERTSTRUCT item = {0};
 	if(SUCCEEDED(SaveState(&item, hWndTvw))) {
-		CWindowEx(hWndTvw).InternalSetRedraw(FALSE);
+		CWindowEx2(hWndTvw).InternalSetRedraw(FALSE);
 		BOOL selected = ((item.itemex.mask & TVIF_STATE) && ((item.itemex.state & TVIS_SELECTED) == TVIS_SELECTED));
 
 		flags.caretItemChange.hNewItem = NULL;
@@ -282,7 +282,7 @@ HRESULT TreeViewItem::Move(HTREEITEM hNewParentItem, HTREEITEM hNewPreviousItem,
 		SendMessage(hWndTvw, TVM_DELETEITEM, 0, reinterpret_cast<LPARAM>(properties.itemHandle));
 		properties.itemHandle = hNewItem;
 
-		CWindowEx(hWndTvw).InternalSetRedraw(TRUE);
+		CWindowEx2(hWndTvw).InternalSetRedraw(TRUE);
 		return S_OK;
 	} else {     // SUCCEEDED(SaveState(&item, hWndTvw))
 		return E_FAIL;

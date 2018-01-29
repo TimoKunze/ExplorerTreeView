@@ -997,7 +997,7 @@ BOOL TreeViewItems::IsSelected(HTREEITEM hItem, HWND hWndTvw/* = NULL*/)
 	pTvwItemToMove->SetOwner(properties.pOwnerExTvw);
 	pTvwItemToMove->flags.movingWholeBranch = TRUE;
 
-	CWindowEx(hWndTvw).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndTvw).InternalSetRedraw(FALSE);
 	#ifdef USE_STL
 		for(std::vector<HTREEITEM>::reverse_iterator iter = itemsToMove.rbegin(); iter != itemsToMove.rend(); ++iter) {
 			pTvwItemToMove->Attach(*iter);
@@ -1019,7 +1019,7 @@ BOOL TreeViewItems::IsSelected(HTREEITEM hItem, HWND hWndTvw/* = NULL*/)
 		properties.hSimpleParentItem = hNewParentItem;
 		properties.hLastEnumeratedItem = NULL;
 	}
-	CWindowEx(hWndTvw).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndTvw).InternalSetRedraw(TRUE);
 
 	return hr;
 }
@@ -1092,7 +1092,7 @@ void TreeViewItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 {
 	ATLASSERT(IsWindow(hWndTvw));
 
-	CWindowEx(hWndTvw).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndTvw).InternalSetRedraw(FALSE);
 	#ifdef USE_STL
 		for(std::vector<HTREEITEM>::reverse_iterator iter = itemsToRemove.rbegin(); iter < itemsToRemove.rend(); ++iter) {
 			SendMessage(hWndTvw, TVM_DELETEITEM, 0, reinterpret_cast<LPARAM>(*iter));
@@ -1102,7 +1102,7 @@ void TreeViewItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 			SendMessage(hWndTvw, TVM_DELETEITEM, 0, reinterpret_cast<LPARAM>(itemsToRemove[i]));
 		}
 	#endif
-	CWindowEx(hWndTvw).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndTvw).InternalSetRedraw(TRUE);
 
 	return S_OK;
 }
