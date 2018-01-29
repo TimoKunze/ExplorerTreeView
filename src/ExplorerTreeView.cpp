@@ -1456,9 +1456,9 @@ BOOL ExplorerTreeView::CreateLegacyOLEDragImage(ITreeViewItemContainer* pItems, 
 			}
 			ATLASSUME(pImgLst);
 
-			DWORD flags = 0;
-			pImgLst->GetItemFlags(0, &flags);
-			if(flags & ILIF_ALPHA) {
+			DWORD imageFlags = 0;
+			pImgLst->GetItemFlags(0, &imageFlags);
+			if(imageFlags & ILIF_ALPHA) {
 				// the drag image makes use of the alpha channel
 				IMAGEINFO imageInfo = {0};
 				ImageList_GetImageInfo(hImageList, 0, &imageInfo);
@@ -5935,11 +5935,11 @@ STDMETHODIMP ExplorerTreeView::HitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y, Hit
 	}
 
 	if(IsWindow()) {
-		UINT flags = static_cast<UINT>(*pHitTestDetails);
-		HTREEITEM hItem = HitTest(x, y, &flags, TRUE);
+		UINT hitTestFlags = static_cast<UINT>(*pHitTestDetails);
+		HTREEITEM hItem = HitTest(x, y, &hitTestFlags, TRUE);
 
 		if(pHitTestDetails) {
-			*pHitTestDetails = static_cast<HitTestConstants>(flags);
+			*pHitTestDetails = static_cast<HitTestConstants>(hitTestFlags);
 		}
 		ClassFactory::InitTreeItem(hItem, this, IID_ITreeViewItem, reinterpret_cast<LPUNKNOWN*>(ppHitItem));
 		return S_OK;
@@ -8427,12 +8427,12 @@ LRESULT ExplorerTreeView::OnEditXButtonUp(UINT /*message*/, WPARAM wParam, LPARA
 				pDetails->pItemHandles[0] = static_cast<HTREEITEM>(LongToHandle(h));
 				pDetails->numberOfItems = 1;
 			} else {
-				CComQIPtr<ITreeViewItemContainer> pTvwItems = pDetails->pVariant->pdispVal;
-				if(pTvwItems) {
+				CComQIPtr<ITreeViewItemContainer> pTvwItemContainer = pDetails->pVariant->pdispVal;
+				if(pTvwItemContainer) {
 					// a TreeViewItemContainer collection
-					CComQIPtr<IEnumVARIANT> pEnumerator = pTvwItems;
+					CComQIPtr<IEnumVARIANT> pEnumerator = pTvwItemContainer;
 					LONG c = 0;
-					pTvwItems->Count(&c);
+					pTvwItemContainer->Count(&c);
 					pDetails->numberOfItems = c;
 					if(pDetails->numberOfItems > 0 && pEnumerator) {
 						ATLASSUME(shellBrowserInterface.pInternalMessageListener);
@@ -12346,17 +12346,17 @@ HTREEITEM ExplorerTreeView::HitTest(LONG x, LONG y, UINT* pFlags, BOOL ignoreBou
 {
 	ATLASSERT(IsWindow());
 
-	UINT flags = 0;
+	UINT hitTestFlags = 0;
 	if(pFlags) {
-		flags = *pFlags;
+		hitTestFlags = *pFlags;
 	}
-	TVHITTESTINFO hitTestInfo = {{x, y}, flags, 0};
+	TVHITTESTINFO hitTestInfo = {{x, y}, hitTestFlags, 0};
 	HTREEITEM hItem = reinterpret_cast<HTREEITEM>(SendMessage(TVM_HITTEST, 0, reinterpret_cast<LPARAM>(&hitTestInfo)));
-	flags = hitTestInfo.flags;
+	hitTestFlags = hitTestInfo.flags;
 	if(pFlags) {
-		*pFlags = flags;
+		*pFlags = hitTestFlags;
 	}
-	if(!ignoreBoundingBoxDefinition && ((properties.itemBoundingBoxDefinition & flags) != flags)) {
+	if(!ignoreBoundingBoxDefinition && ((properties.itemBoundingBoxDefinition & hitTestFlags) != hitTestFlags)) {
 		hItem = NULL;
 	}
 	return hItem;

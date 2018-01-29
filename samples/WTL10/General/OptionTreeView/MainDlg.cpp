@@ -184,7 +184,7 @@ void __stdcall CMainDlg::ItemStateImageChangingExtvwu(LPDISPATCH treeItem, long 
 					_variant_t v;
 					v.Clear();
 					while(pEnum->Next(1, &v, &ul) == S_OK) {
-						CComQIPtr<ITreeViewItem> pItem = v.pdispVal;
+						pItem = v.pdispVal;
 						pItem->PutStateImageIndex(3);
 					}
 

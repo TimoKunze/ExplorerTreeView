@@ -238,19 +238,19 @@ STDMETHODIMP TreeViewItemContainer::get__NewEnum(IUnknown** ppEnumerator)
 }
 
 
-STDMETHODIMP TreeViewItemContainer::Add(VARIANT items)
+STDMETHODIMP TreeViewItemContainer::Add(VARIANT itemsToAdd)
 {
 	HRESULT hr = E_FAIL;
 	LONG id = 0;
-	switch(items.vt) {
+	switch(itemsToAdd.vt) {
 		case VT_DISPATCH:
-			if(items.pdispVal) {
-				CComQIPtr<ITreeViewItem, &IID_ITreeViewItem> pTvwItem(items.pdispVal);
+			if(itemsToAdd.pdispVal) {
+				CComQIPtr<ITreeViewItem, &IID_ITreeViewItem> pTvwItem(itemsToAdd.pdispVal);
 				if(pTvwItem) {
 					// add a single TreeViewItem object
 					hr = pTvwItem->get_ID(&id);
 				} else {
-					CComQIPtr<ITreeViewItems, &IID_ITreeViewItems> pTvwItems(items.pdispVal);
+					CComQIPtr<ITreeViewItems, &IID_ITreeViewItems> pTvwItems(itemsToAdd.pdispVal);
 					if(pTvwItems) {
 						// add a TreeViewItems collection
 						CComQIPtr<IEnumVARIANT, &IID_IEnumVARIANT> pEnumerator(pTvwItems);
@@ -298,7 +298,7 @@ STDMETHODIMP TreeViewItemContainer::Add(VARIANT items)
 		default:
 			VARIANT v;
 			VariantInit(&v);
-			hr = VariantChangeType(&v, &items, 0, VT_UI4);
+			hr = VariantChangeType(&v, &itemsToAdd, 0, VT_UI4);
 			id = v.ulVal;
 			break;
 	}

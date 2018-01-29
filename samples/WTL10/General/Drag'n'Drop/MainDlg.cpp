@@ -120,7 +120,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 					if(hMem) {
 						LPVOID pIconData = LockResource(hMem);
 						if(pIconData) {
-							HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR | LR_CREATEDIBSECTION);
+							hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR | LR_CREATEDIBSECTION);
 							if(hIcon) {
 								controls.imageList.AddIcon(hIcon);
 								DestroyIcon(hIcon);
@@ -149,7 +149,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 					if(hMem) {
 						LPVOID pIconData = LockResource(hMem);
 						if(pIconData) {
-							HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR | LR_CREATEDIBSECTION);
+							hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR | LR_CREATEDIBSECTION);
 							if(hIcon) {
 								controls.imageList.AddIcon(hIcon);
 								DestroyIcon(hIcon);
@@ -422,12 +422,12 @@ void __stdcall CMainDlg::DropExtvwu(LPDISPATCH dropTarget, short /*button*/, sho
 	_variant_t v;
 	v.Clear();
 	while(pEnum->Next(1, &v, &ul) == S_OK) {
-		CComQIPtr<ITreeViewItem> pItem = v.pdispVal;
+		CComQIPtr<ITreeViewItem> pItm = v.pdispVal;
 		if(insertionMark == impNowhere) {
 			_variant_t ia;
 			ia.vt = VT_I4;
 			ia.lVal = iaLast;
-			pItem->Move(pParentItem, ia);
+			pItm->Move(pParentItem, ia);
 		} else {
 			_variant_t ia;
 			ia.vt = VT_DISPATCH;
@@ -436,7 +436,7 @@ void __stdcall CMainDlg::DropExtvwu(LPDISPATCH dropTarget, short /*button*/, sho
 			} else {
 				ia.pdispVal = NULL;
 			}
-			pItem->Move(pParentItem, ia);
+			pItm->Move(pParentItem, ia);
 		}
 	}
 
