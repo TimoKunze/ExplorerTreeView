@@ -345,7 +345,7 @@ void __stdcall CMainDlg::CustomDrawExtvwu(LPDISPATCH treeItem, long* /*itemLevel
 						return;
 					}
 					rc.left = rc.right + 5;
-					WTL::CRect clientRectangle;
+					CRect clientRectangle;
 					extvwUWnd.GetClientRect(&clientRectangle);
 					rc.right = clientRectangle.Width();
 
