@@ -8434,36 +8434,8 @@ LRESULT ExplorerTreeView::OnEditXButtonUp(UINT /*message*/, WPARAM wParam, LPARA
 					LONG c = 0;
 					pTvwItemContainer->Count(&c);
 					pDetails->numberOfItems = c;
-					if(pDetails->numberOfItems > 0 && pEnumerator) {
-						ATLASSUME(shellBrowserInterface.pInternalMessageListener);
-						pDetails->pItemHandles = reinterpret_cast<HTREEITEM*>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHTVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(HTREEITEM), NULL));
-						ATLASSERT_ARRAYPOINTER(pDetails->pItemHandles, HTREEITEM, pDetails->numberOfItems);
-						VARIANT item;
-						VariantInit(&item);
-						ULONG dummy = 0;
-						for(UINT i = 0; i < pDetails->numberOfItems && pEnumerator->Next(1, &item, &dummy) == S_OK; ++i) {
-							pDetails->pItemHandles[i] = NULL;
-							if((item.vt == VT_DISPATCH) && item.pdispVal) {
-								pTvwItem = item.pdispVal;
-								if(pTvwItem) {
-									h = NULL;
-									pTvwItem->get_Handle(&h);
-									pDetails->pItemHandles[i] = static_cast<HTREEITEM>(LongToHandle(h));
-								}
-							}
-							VariantClear(&item);
-						}
-						hr = S_OK;
-					}
-				} else {
-					CComQIPtr<ITreeViewItems> pTvwItems = pDetails->pVariant->pdispVal;
-					if(pTvwItems) {
-						// a TreeViewItems collection
-						CComQIPtr<IEnumVARIANT> pEnumerator = pTvwItems;
-						LONG c = 0;
-						pTvwItems->Count(&c);
-						pDetails->numberOfItems = c;
-						if(pDetails->numberOfItems > 0 && pEnumerator) {
+					if(pEnumerator) {
+						if(pDetails->numberOfItems > 0) {
 							ATLASSUME(shellBrowserInterface.pInternalMessageListener);
 							pDetails->pItemHandles = reinterpret_cast<HTREEITEM*>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHTVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(HTREEITEM), NULL));
 							ATLASSERT_ARRAYPOINTER(pDetails->pItemHandles, HTREEITEM, pDetails->numberOfItems);
@@ -8481,6 +8453,38 @@ LRESULT ExplorerTreeView::OnEditXButtonUp(UINT /*message*/, WPARAM wParam, LPARA
 									}
 								}
 								VariantClear(&item);
+							}
+						}
+						hr = S_OK;
+					}
+				} else {
+					CComQIPtr<ITreeViewItems> pTvwItems = pDetails->pVariant->pdispVal;
+					if(pTvwItems) {
+						// a TreeViewItems collection
+						CComQIPtr<IEnumVARIANT> pEnumerator = pTvwItems;
+						LONG c = 0;
+						pTvwItems->Count(&c);
+						pDetails->numberOfItems = c;
+						if(pEnumerator) {
+							if(pDetails->numberOfItems > 0) {
+								ATLASSUME(shellBrowserInterface.pInternalMessageListener);
+								pDetails->pItemHandles = reinterpret_cast<HTREEITEM*>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHTVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(HTREEITEM), NULL));
+								ATLASSERT_ARRAYPOINTER(pDetails->pItemHandles, HTREEITEM, pDetails->numberOfItems);
+								VARIANT item;
+								VariantInit(&item);
+								ULONG dummy = 0;
+								for(UINT i = 0; i < pDetails->numberOfItems && pEnumerator->Next(1, &item, &dummy) == S_OK; ++i) {
+									pDetails->pItemHandles[i] = NULL;
+									if((item.vt == VT_DISPATCH) && item.pdispVal) {
+										pTvwItem = item.pdispVal;
+										if(pTvwItem) {
+											h = NULL;
+											pTvwItem->get_Handle(&h);
+											pDetails->pItemHandles[i] = static_cast<HTREEITEM>(LongToHandle(h));
+										}
+									}
+									VariantClear(&item);
+								}
 							}
 							hr = S_OK;
 						}
