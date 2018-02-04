@@ -1,3 +1,9 @@
+Version 2.6.5 - 04/02/2018
+
+- Fixed a crash when calling the ShellTreeView's InvokeDefaultShellContextMenuCommand with an empty TreeViewItems or TreeViewItemContainer collection.
+
+
+
 Version 2.6.4 - 29/01/2018
 
 - Upgraded to WTL 10.
