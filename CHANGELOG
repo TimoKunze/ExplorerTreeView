@@ -1,3 +1,9 @@
+Version 2.6.6 - 27/04/2019
+
+- FIX: Dragging data to certain programs like Total Commander or FileZilla did not work if the data was provided only in the OLESetData event.
+
+
+
 Version 2.6.5 - 04/02/2018
 
 - Fixed a crash when calling the ShellTreeView's InvokeDefaultShellContextMenuCommand with an empty TreeViewItems or TreeViewItemContainer collection.
